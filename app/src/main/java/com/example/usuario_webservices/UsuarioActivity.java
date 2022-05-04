@@ -25,7 +25,7 @@ import java.util.Map;
 public class UsuarioActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener{
 
     EditText jetusr,jetnombre,jetcorreo,jetclave;
-    Button jbtregistrar,jbtregresar,jbtconsultar,jbtmodificar,jbteliminar,jbtlimpiar;
+    Button jbtregistrar,jbtregresar,jbtconsultar,jbtmodificar,jbteliminar,jbtlimpiar,jbtventas;
     RequestQueue rq;
     JsonRequest jrq;
 
@@ -45,6 +45,7 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
         jbtmodificar = findViewById(R.id.btmodificar);
         jbtlimpiar = findViewById(R.id.btLimpiar);
         jbteliminar = findViewById(R.id.bteliminar);
+        jbtventas = findViewById(R.id.btVentas);
 
         rq = Volley.newRequestQueue(this);//conexion a internet
 
@@ -69,6 +70,13 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
             }
         });
 
+        jbtventas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ventas();
+            }
+        });
+
         jbtmodificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { modificar();}
@@ -86,7 +94,7 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
     }
 
     private void registrar_usuario() {
-        String url = "http://172.16.59.198:8081/usuarios/registrocorreo.php";
+        String url = "http:// 172.18.87.207:80/usuarios/registrocorreo.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
                 {
@@ -125,7 +133,7 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
             jetusr.requestFocus();
         }
         else{
-            String url = "http://172.16.59.198:8081/usuarios/consulta.php?usr="+jetusr.getText().toString()+"";
+            String url = "http:// 172.18.87.207:80/usuarios/consulta.php?usr="+jetusr.getText().toString()+"";
             jrq = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
             rq.add(jrq);
         }
@@ -133,7 +141,7 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
 
 
     public void modificar(){
-        String url = "http://172.16.59.198:8081/usuarios/actualiza.php";
+        String url = "http:// 172.18.87.207:80/usuarios/actualiza.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
                 {
@@ -171,7 +179,7 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
     }
 
     public void eliminar(){
-        String url = "http://172.16.59.198:8081/usuarios/elimina.php";
+        String url = "http:// 172.18.87.207:80/usuarios/elimina.php";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
                 {
@@ -215,6 +223,11 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
         startActivity(intmain);
     }
 
+    public void ventas(){
+        Intent intmain=new Intent(getApplicationContext(),ventasActivity.class);
+        startActivity(intmain);
+    }
+
     public void Limpiar_campos(){
         jetusr.setText("");
         jetnombre.setText("");
@@ -239,6 +252,8 @@ public class UsuarioActivity extends AppCompatActivity implements Response.Liste
             jetcorreo.setText(jsonObject.optString("correo"));
             jetclave.setText(jsonObject.optString("clave"));
         }
+
+
         catch ( JSONException e)
         {
             e.printStackTrace();

@@ -8,85 +8,70 @@
     android:orientation="vertical"
     >
     <TextView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registro de Usuarios"
+        android:text="Registro de Ventas"
         android:gravity="center_horizontal"
         />
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Codigo de Venta"
+        android:gravity="center_horizontal"
+        />
+    <EditText
+        android:id="@+id/etCod_venta"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="000"
+        android:inputType="textEmailAddress"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fecha"
+        android:gravity="center_horizontal"
+        />
+    <EditText
+        android:id="@+id/etFechaVenta"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="00/00/00"
+        android:inputType="textPersonName"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Usuario"
         android:gravity="center_horizontal"
         />
     <EditText
-        android:id="@+id/etuser"
+        android:id="@+id/etUsuarioVenta"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:hint="p.e. pperez"
+        android:hint="edi"
         android:inputType="textEmailAddress"
         android:gravity="center_horizontal"
         />
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:gravity="center_horizontal"
-        />
-    <EditText
-        android:id="@+id/etnombre"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:hint="p.e. Pepe Perez"
-        android:inputType="textPersonName"
-        android:gravity="center_horizontal"
-        />
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Correo Electronico"
-        android:gravity="center_horizontal"
-        />
-    <EditText
-        android:id="@+id/etcorreo"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:hint="p.e. micorreo@gmail.com"
-        android:inputType="textEmailAddress"
-        android:gravity="center_horizontal"
-        />
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contraseña"
-        android:gravity="center_horizontal"
-        />
-    <EditText
-        android:id="@+id/etclave"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:gravity="center_horizontal"
-        />
+
     <Button
-        android:id="@+id/btregistrar"
+        android:id="@+id/btIngresarVenta"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Registrar"
+        android:text="Ingresar"
         android:layout_gravity="center_horizontal"
         />
     <Button
-        android:id="@+id/btconsultar"
+        android:id="@+id/btconsultarVenta"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Consultar"
@@ -94,48 +79,23 @@
         />
 
     <Button
-        android:layout_marginTop="1dp"
-        android:id="@+id/btregresar"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btEliminarVenta"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Eliminar"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:id="@+id/btRegresarVentas"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Regresar"
         android:layout_gravity="center_horizontal"
         />
 
-    <Button
-        android:layout_marginTop="1dp"
-        android:id="@+id/btmodificar"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Modificar"
-        android:layout_gravity="center_horizontal"
-        />
-
-    <Button
-        android:layout_marginTop="1dp"
-        android:id="@+id/bteliminar"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Eliminar"
-        android:layout_gravity="center_horizontal"
-        />
-    <Button
-        android:layout_marginTop="1dp"
-        android:id="@+id/btVentas"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Ventas"
-        android:layout_gravity="center_horizontal"
-        />
-
-    <Button
-        android:layout_marginTop="1dp"
-        android:id="@+id/btLimpiar"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Limpiar"
-        android:layout_gravity="center_horizontal"
-        />
 
 
 </LinearLayout>
